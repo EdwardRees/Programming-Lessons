@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Dice Roll</title>
+    <style>
+      body {
+        background-color: #151414e6;
+        color: #f8f8f8;
+        font-size: 1.5rem;
+        vertical-align: middle;
+      }
+      input {
+        font-size: 1.4rem;
+        vertical-align: middle;
+      }
+
+      img {
+        background-color: #f8f8f8;
+        width: 100;
+        border-radius: 10pt;
+      }
+
+      .dice {
+        margin: 5pt;
+      }
+
+      .dice-container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .set {
+        background-color: #4c86e7;
+        border-color: transparent;
+        border-radius: 10pt;
+        padding: 5pt 50pt;
+        font-size: 1.2rem;
+        color: #f8f8f8;
+      }
+
+      .roll {
+        background-color: #ca2323;
+        color: #f8f8f8;
+        border-color: transparent;
+        border-radius: 10pt;
+        width: 50%;
+        font-size: 1.2rem;
+        padding: 10pt 0pt;
+      }
+    </style>
+    <script>
+      let roll1 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Dice-1-b.svg/1024px-Dice-1-b.svg.png";
+      let roll2 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dice-2-b.svg/600px-Dice-2-b.svg.png";
+      let roll3 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Dice-3-b.svg/600px-Dice-3-b.svg.png";
+      let roll4 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Dice-4-b.svg/768px-Dice-4-b.svg.png";
+      let roll5 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Dice-5-b.svg/768px-Dice-5-b.svg.png";
+      let roll6 =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dice-6a-b.svg/1024px-Dice-6a-b.svg.png";
+
+      let dice_count = 0;
+
+      function set() {
+        let count = parseInt(document.getElementById("count").value);
+        if (isNaN(count)) {
+          count = 0;
+        }
+        dice_count = count;
+        let htmlStrings = "";
+        for (let i = 1; i < dice_count + 1; i++) {
+          htmlStrings += `<div class="dice" id="die${i}"></div>`;
+        }
+        document.getElementById("dice-container").innerHTML = htmlStrings;
+      }
+
+      function rollAll() {
+        set();
+        if (dice_count === 0) {
+          alert("No dice count given! Set the number of dice!");
+        }
+        for (let i = 1; i < dice_count + 1; i++) {
+          roll(`die${i}`);
+        }
+      }
+      function roll(dieId) {
+        let die = parseInt(Math.random() * 6 + 1);
+        switch (die) {
+          case 1:
+            document.getElementById(dieId).innerHTML = `<img src="${roll1}" />`;
+            break;
+          case 2:
+            document.getElementById(dieId).innerHTML = `<img src="${roll2}"/>`;
+            break;
+          case 3:
+            document.getElementById(dieId).innerHTML = `<img src="${roll3}"/>`;
+            break;
+          case 4:
+            document.getElementById(dieId).innerHTML = `<img src="${roll4}"/>`;
+            break;
+          case 5:
+            document.getElementById(dieId).innerHTML = `<img src="${roll5}"/>`;
+            break;
+          default:
+            document.getElementById(dieId).innerHTML = `<img src="${roll6}"/>`;
+            break;
+        }
+        console.log(die);
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <label for="count">Number of die to roll:</label>
+      <input name="count" id="count" type="number" value="1" />
+      <br />
+      <br />
+      <button onclick="rollAll()" class="roll">Roll</button>
+      <br />
+      <br />
+      <div class="dice-container" id="dice-container"></div>
+    </center>
+  </body>
+</html>

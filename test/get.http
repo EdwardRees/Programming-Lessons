@@ -1,0 +1,17 @@
+GET http://localhost:8080/codes/HelloWorld.code.c HTTP/1.1
+
+###
+GET http://localhost:8080/codes/cpp/Basics.code.cpp HTTP/1.1
+
+###
+GET http://localhost:8080/codes/datastructures/ts/LinkedList.code.ts HTTP/1.1
+###
+
+GET http://localhost:8080/codes/datastructures/ts/LinkedList.code.ts?key=Keys HTTP/1.1
+###
+
+GET http://localhost:8080/codes/datastructures/ts/LinkedList.code.ts?key=LinkedList%20Structure HTTP/1.1
+
+###
+
+GET http://localhost:8080/codes/datastructures/ts/LinkedList.code.ts?key=LinkedList%20Structure&pure=true HTTP/1.1

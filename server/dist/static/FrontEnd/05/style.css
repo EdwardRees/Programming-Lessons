@@ -1,0 +1,43 @@
+body {
+  background-color: #151414e6;
+  color: #f8f8f8;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+input {
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+img {
+  background-color: #f8f8f8;
+  width: 100;
+  border-radius: 10pt;
+  padding-bottom: 10pt;
+}
+
+.dice-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.set {
+  background-color: #4c86e7;
+  border-color: transparent;
+  border-radius: 10pt;
+  padding: 5pt 50pt;
+  font-size: 1.2rem;
+  color: #f8f8f8;
+}
+
+.roll {
+  background-color: #ca2323;
+  color: #f8f8f8;
+  border-color: transparent;
+  border-radius: 10pt;
+  width: 50%;
+  font-size: 1.2rem;
+  padding: 10pt 0pt;
+}

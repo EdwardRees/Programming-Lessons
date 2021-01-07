@@ -1,0 +1,1 @@
+GET http://localhost:8080/online_codes/https://raw.githubusercontent.com/EdwardRees/TypeScript-Code-Parser/master/src/codes/typescript/structs/LinkedList.code.ts
