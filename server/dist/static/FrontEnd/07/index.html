@@ -2,19 +2,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do Add</title>
+    <title>To Do Add + Delete</title>
     <style></style>
     <script>
       let todos = [];
+      function remove(i) {
+        todos.splice(i, 1);
+        show();
+      }
       function show() {
         let str = "<ul>";
         for (let i = 0; i < todos.length; i++) {
-          str += `<li>${todos[i]}</li>`;
+          str += `<li>${todos[i]} <button onclick="remove(${i})">Remove</button></li>`;
         }
         str += "</ul>";
         document.getElementById("todos").innerHTML = str;
       }
-
       function add() {
         let value = document.getElementById("todo").value;
         todos.push(value);

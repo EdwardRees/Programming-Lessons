@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To Do</title>
+    <style></style>
+    <script>
+      let todos = [];
+      function remove(i) {
+        todos.splice(i, 1);
+        show();
+      }
+      function save(i) {
+        let todo = document.getElementById(`todo_${i}`);
+        let new_todo = document.getElementById(`updated_todo_${i}`);
+        todos[i] = new_todo.value;
+        let temp = `<li id="todo_${i}">${todos[i]}<button onclick="remove(${i})" class="remove">Remove</button> <button onclick="update(${i})" class="update">Update</button> </li>`;
+        todo.innerHTML = temp;
+      }
+      function update(i) {
+        let todo = document.getElementById(`todo_${i}`);
+        let temp = `<li id="todo_${i}"><input value=${todos[i]} id="updated_todo_${i}"> <button onclick="remove(${i})" class="remove">Remove</button> <button onclick="save(${i})" class="save" id="save_${i}">Save</button></li>`;
+        todo.innerHTML = temp;
+      }
+      function show() {
+        let str = "<ul>";
+        for (let i = 0; i < todos.length; i++) {
+          str += `<li id="todo_${i}">${todos[i]} <button onclick="remove(${i})" class="remove">Remove</button> <button onclick="update(${i})" class="update">Update</button> </li>`;
+        }
+        str += "</ul>";
+        document.getElementById("todos").innerHTML = str;
+      }
+      function add() {
+        let value = document.getElementById("todo").value;
+        todos.push(value);
+        document.getElementById("todo").value = "";
+        show();
+      }
+    </script>
+  </head>
+
+  <body>
+    <center>
+      <div>
+        <label for="todo">Input a To Do:</label>
+        <input name="todo" id="todo" />
+        <button onclick="add()" id="add" class="add">Add</button>
+      </div>
+    </center>
+    <div id="todos"></div>
+    <script>
+      let todoInput = document.getElementById("todo");
+      if (todoInput) {
+        todoInput.addEventListener("keyup", (e) => {
+          if (e.keyCode === 13) {
+            document.getElementById("add").click();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
