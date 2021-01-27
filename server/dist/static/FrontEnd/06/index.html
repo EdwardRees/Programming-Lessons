@@ -2,46 +2,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do Add</title>
-    <style></style>
-    <script>
-      let todos = [];
-      function show() {
-        let str = "<ul>";
-        for (let i = 0; i < todos.length; i++) {
-          str += `<li>${todos[i]}</li>`;
-        }
-        str += "</ul>";
-        document.getElementById("todos").innerHTML = str;
-      }
-
-      function add() {
-        let value = document.getElementById("todo").value;
-        todos.push(value);
-        document.getElementById("todo").value = "";
-        show();
-      }
-    </script>
+    <title>Simple To Do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
 
   <body>
-    <center>
-      <div>
-        <label for="todo">Input a To Do:</label>
-        <input name="todo" id="todo" />
-        <button onclick="add()" id="add">Add</button>
-      </div>
-    </center>
-    <div id="todos"></div>
+    <div class="container">
+      <center>
+        <h1>To Do</h1>
+        <input name="todo" id="todo" class="inputTodo" />
+        <button onclick="add()" id="add" class="add">Add</button>
+      </center>
+      <div id="todos"></div>
+    </div>
     <script>
       let todoInput = document.getElementById("todo");
       if (todoInput) {
         todoInput.addEventListener("keyup", (e) => {
           if (e.keyCode === 13) {
-            document.getElementById("add").click()
+            document.getElementById("add").click();
           }
         });
       }
     </script>
   </body>
 </html>
+
+<!-- 
+  Lesson Plan: 
+  - Show project
+  - Go over List and pushing to a list
+  - Start coding the HTML
+  - Start coding the JS
+  - Go back to CSS after - if time permits
+ -->

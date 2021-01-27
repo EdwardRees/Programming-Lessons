@@ -8,11 +8,15 @@ input {
   font-size: 1.4rem;
   vertical-align: middle;
 }
+
 img {
   background-color: #f8f8f8;
   width: 100;
   border-radius: 10pt;
-  padding-bottom: 10pt;
+}
+
+.dice {
+  margin: 5pt;
 }
 
 .dice-container {

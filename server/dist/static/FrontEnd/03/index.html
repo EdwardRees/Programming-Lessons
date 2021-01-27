@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coin Flip</title>
+  
+  <style>
+    button {
+  width: 40%;
+  padding-top: 20;
+  padding-bottom: 20;
+}
+img {
+  width: 200pt;
+  height: 200pt;
+}
+  </style>
+</head>
+
+<body>
+  <center>
+    <button onclick="toss()">Toss</button>
+    <br>
+    <h1 id="coin"> Flip</h1>
+    </center>
+    <script src="script.js">
+      function toss() {
+    const limit = 100;
+    let val = parseInt(Math.random() * limit + 1);
+    console.log(val);
+    if (val % 2 == 0) {
+      document.getElementById("coin").innerHTML = '<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gambling911.com%2Ffiles%2Fstyles%2Farticle_image%2Fpublic%2Fpublisher%2FSuper-Bowl-Coin-Toss-Heads-020316L.jpg%3Fitok%3DL4jga2uu&f=1&nofb=1" />';
+    } else {
+      document.getElementById("coin").innerHTML = '<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51NyMaKLydL._QL70_.jpg&f=1&nofb=1">';
+    }
+  }
+    </script>
+</body>
+
+</html>

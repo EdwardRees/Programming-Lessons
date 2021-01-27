@@ -16,10 +16,16 @@ const port = 8080;
 
 app.use(cors());
 app.use(express.json());
-app.use("/static", express.static(path.join(__dirname, "static")));
+// app.use("/static", express.static(path.join(__dirname, "static")));
+app.use(express.static(path.join(__dirname, "static")));
+
+console.info(path.join(__dirname, "static"));
+
 const http = httpServer.createServer(app);
 
 buildComments();
+
+
 
 app.get("/", (req: any, res: any) => {
   res.sendFile(__dirname + "/static/index.html");
@@ -70,7 +76,14 @@ app.get("/codes/:folder(\\w*)?/:filepath", (req: any, res: any) => {
 });
 
 app.get("/frontend/:num", (req: any, res: any) => {
-  res.sendFile(__dirname + `/static/FrontEnd/0${req.params.num}/index.html`);
+  let num: number = req.params.num;
+  let url: string = "";
+  if(num < 10){
+    url = `0${num}`
+  } else {
+    url = `${num}`
+  }
+  res.sendFile(__dirname + `/static/FrontEnd/${url}/`);
 });
 
 http.listen(port, () => {

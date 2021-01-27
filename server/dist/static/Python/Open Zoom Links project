@@ -1,0 +1,10 @@
+Open Zoom Links project
+
+File Reading: open
+Input Output: input, print
+WebBrowser: webbrowser
+
+
+import webbrowser
+
+webbrowser.open('http://example.com')
