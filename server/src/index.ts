@@ -82,6 +82,7 @@ app.get("/frontend/:num", (req: any, res: any) => {
     res.sendFile(__dirname + "/static/FrontEnd/index.html");
   }
   let url: string = "";
+
   if (num < 10) {
     url = `0${num}`;
   } else {

@@ -2,38 +2,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple To Do</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Arrays and Strings</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="container">
-      <center>
-        <h1>To Do</h1>
-        <input name="todo" id="todo" class="inputTodo" />
-        <button onclick="add()" id="add" class="add">Add</button>
-      </center>
-      <div id="todos"></div>
+    <div class="text-center">
+      <h1>Strings and Arrays</h1>
+      <div>
+        <label for="string">Input a String:</label>
+        <input name="string" id="string" type="text" onchange="discover()" />
+      </div>
+      <h2>Reverse String</h2>
+      <p id="reversed"></p>
+      <h2>Palindrome</h2>
+      <p id="palindromic"></p>
+      <h2>Vowel Consonant Count</h2>
+      <p id="vowels"></p>
+      <p id="consonants"></p>
+      <h2>Encrypted with a Caesar Shift of 10</h2>
+      <p id="encrypted"></p>
     </div>
-    <script>
-      let todoInput = document.getElementById("todo");
-      if (todoInput) {
-        todoInput.addEventListener("keyup", (e) => {
-          if (e.keyCode === 13) {
-            document.getElementById("add").click();
-          }
-        });
-      }
-    </script>
   </body>
 </html>
-
-<!-- 
-  Lesson Plan: 
-  - Show project
-  - Go over List and pushing to a list
-  - Start coding the HTML
-  - Start coding the JS
-  - Go back to CSS after - if time permits
- -->
