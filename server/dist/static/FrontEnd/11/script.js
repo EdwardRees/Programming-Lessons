@@ -1,11 +1,35 @@
-let words = ["dog", "computer"];
+let words = [
+  "apple",
+  "banana",
+  "computer",
+  "dreamcatcher",
+  "elephant",
+  "fox",
+  "giraffe",
+  "hotdog",
+  "igloo",
+  "jump",
+  "kangaroo",
+  "lemon",
+  "mango",
+  "nano",
+  "orange",
+  "pink",
+  "red",
+  "short",
+  "time",
+  "utopia",
+  "very",
+  "xray",
+  "zebra"
+];
 
 let word = "";
 
 let hidden = [];
 
 let guesses = 0;
-let guessLimit = 5;
+let guessLimit = 10;
 
 let guessedLetters = [];
 let correctLetters = [];
