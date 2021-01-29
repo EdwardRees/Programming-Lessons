@@ -1,0 +1,115 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #103f55;
+  color: #f8f8f8;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.container > .center {
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.btn {
+  padding: 2pt 15pt;
+  border: none;
+  border-radius: 5pt;
+  font-size: 1.5rem;
+}
+
+.btn-success {
+  background-color: #2fa32e;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #990c0c;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+input {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.board-value {
+  font-size: 1.5rem;
+}
+
+.line {
+  border-bottom: 1pt solid black;
+  width: 10pt;
+}
+
+.used {
+  text-align: center;
+}
+
+.spacer {
+  width: 10%;
+}
+
+.board-value {
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 10pt;
+}
+
+.btn-reset {
+  background-color: #48a8d5;
+  color: #fff;
+}
+
+.btn-repeat {
+  background-color: #4b4c8d;
+  color: #fff;
+}
+
+.scoreboard {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.scoreboard-usernames {
+  font-size: 1.1rem;
+}
+
+.scoreboard-scores {
+  font-size: 1.1rem;
+}
+
+.btn-warning {
+  background-color: #4b878d;
+  color: #fff;
+}

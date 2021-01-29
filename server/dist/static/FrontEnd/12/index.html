@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple TicTacToe</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body onload="load()">
+    <div class="container">
+      <div class="center">
+        <h1>Tic Tac Toe</h1>
+        <div id="game" class="text-center"></div>
+        <div id="gameover" hidden class="text-center">
+          <span id="winner" class="winner">Winner: </span>
+          <br />
+          <br />
+          <button id="reset" onclick="reset()" class="btn btn-reset">
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

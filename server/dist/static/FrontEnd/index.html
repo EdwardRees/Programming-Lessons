@@ -25,24 +25,150 @@
       a:visited {
         color: #fff;
       }
+      .footnotes {
+        font-size: 0.8rem;
+      }
+      div.footnotes > ul {
+        list-style-type: none;
+      }
     </style>
+    <script>
+      let maximum = 6;
+      function parseCount(classname) {
+        let num = classname.split("-")[1];
+        if(num === "max"){
+          return maximum;
+        }
+        return parseInt(num);
+      }
+      function getAllStars() {
+        let elements = document.querySelectorAll(`[class^="star-"]`);
+        for (let i = 0; i < elements.length; i++) {
+          let elementCount = parseCount(elements[i].className);
+          let space = document.createElement("span");
+          let stars = document.createTextNode(
+            "[" + star(elementCount, maximum) + "]"
+          );
+          space.appendChild(stars);
+          elements[i].appendChild(space);
+        }
+      }
+      function star(num, total) {
+        if(num === 0){
+          return "☆";
+        }
+        let str = "";
+        const filled = "★";
+        const empty = "";
+        for (let i = 0; i < num; i++) {
+          str += filled;
+        }
+        for (let i = num; i < total; i++) {
+          str += empty;
+        }
+        return str;
+      }
+    </script>
   </head>
-  <body>
+  <body onload="getAllStars()">
     <div class="container">
-      <h1 class="text-center">Projects for Front End Development!</h1>
+      <h1 class="text-center">Projects / Lessons for Front End Development!</h1>
       <ol>
-        <li><a href="/frontend/01">Pure HTML</a></li>
-        <li><a href="/frontend/02">Simple Counter</a></li>
-        <li><a href="/frontend/03">Coin Toss</a></li>
-        <li><a href="/frontend/04">Simple Die Roller</a></li>
-        <li><a href="/frontend/05">Multi-Die Roller</a></li>
-        <li><a href="/frontend/06">To Do List : Add</a></li>
-        <li><a href="/frontend/07">To Do List : Remove</a></li>
-        <li><a href="/frontend/08">To Do List : Update</a></li>
-        <li><a href="/frontend/09">To Do List : LocalStorage Save</a></li>
-        <li><a href="/frontend/10">Simple TicTacToe</a></li>
-        <li><a href="/frontend/11">Complex TicTacToe</a></li>
+        <li>
+          <a href="/frontend/01"><span class="star-0"></span> Pure HTML</a>
+        </li>
+        <li>
+          <a href="/frontend/02"
+            ><span class="star-1"></span> Simple Counter
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/03"><span class="star-1"></span> Coin Toss</a>
+        </li>
+        <li>
+          <a href="/frontend/04"
+            ><span class="star-1"></span> Simple Die Roller
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/05"
+            ><span class="star-2"></span> Multi-Die Roller</a
+          >
+        </li>
+        <li>
+          <a href="/frontend/06"
+            ><span class="star-2"></span> To Do List : Add
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/07"
+            ><span class="star-2"></span> To Do List : Remove
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/08">
+            <span class="star-2"></span>
+            To Do List : Update
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/09">
+            <span class="star-2"></span>
+            To Do List : LocalStorage Save
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/10">
+            <span class="star-2"></span>
+            String Manipulations
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/11">
+            <span class="star-2"></span>
+            Word Guesser
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/12">
+            <span class="star-3"></span>
+            Simple TicTacToe
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/13">
+            <span class="star-max"></span>
+            Complex TicTacToe
+          </a>
+          <sup>[1]</sup>
+        </li>
+        <li>
+          <a href="/frontend/14">
+          <span class="star-3"></span> Unit Converter</a>
+        </li>
+        <li>
+          <a href="/frontend/15">
+            <span class="star-4"></span>
+            Connect Four
+          </a>
+        </li>
+        <li>
+          <a href="/frontend/16">
+            <span class="star-4"></span>
+            Cookie Clicker
+          </a>
+        </li>
       </ol>
+      <div class="footnotes">
+        <ul>
+          <li>
+            <sup>[1]</sup> This is less of a project and more of a showcase of
+            what a simple TicTacToe game can lead towards. It can be done as a
+            project but would take a serious amount of time, due to the sheer
+            amount of code (600+ lines of code)
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
