@@ -83,7 +83,6 @@ function countConsonants() {
     "l",
     "m",
     "n",
-    "o",
     "p",
     "q",
     "r",

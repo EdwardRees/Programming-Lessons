@@ -4,3 +4,4 @@ server/dist/util
 server/dist/index.js*
 server/dist/parser/index.js*
 *.lock
+*.pem
